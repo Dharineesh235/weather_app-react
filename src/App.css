@@ -1,38 +1,60 @@
+body {
+  padding-top: 20px;
+  box-sizing: border-box;
+  min-width: 400px;
+  background: url("https://nordicapis.com/wp-content/uploads/How-to-Build-an-API-Driven-Weather-App.png");
+}
+.modal-div {
+  background: url("https://nordicapis.com/wp-content/uploads/How-to-Build-an-API-Driven-Weather-App.png");
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99222222, endColorstr=#99222222);
+}
+.deg-span {
+  left: 35%;
+  top: 20%;
+}
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2 {
+  margin: auto;
+  margin-top: 100px;
+}
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 60%;
+  text-align: center;
+  margin: 40px auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#customers td,
+#customers th {
+  border-bottom: 2px solid #ddd;
+  padding: 10px;
+  border-radius: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* #customers tr:nth-child(even){background-color: #e4ebe7;} */
+
+.city-name:hover {
+  background-color: #94e4cc;
+}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: green;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.city-name {
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.page-nav-btns {
+  margin-top: -20px;
+}
+button {
+  border: none;
+  background: transparent;
 }
