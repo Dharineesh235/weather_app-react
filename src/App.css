@@ -34,8 +34,6 @@ h2 {
   border-radius: 20px;
 }
 
-/* #customers tr:nth-child(even){background-color: #e4ebe7;} */
-
 .city-name:hover {
   background-color: #94e4cc;
 }

@@ -1,6 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
+import { WeatherContext } from "../WeatherContextProvider/WeatherContextProvider";
 
-const Modal = ({ modalContent }) => {
+const Modal = () => {
+  const { modalContent } = useContext(WeatherContext);
+
   useEffect(() => console.log(modalContent), []);
   return (
     <div className="modal fade" id="staticBackdrop" aria-hidden="false">
@@ -19,7 +22,12 @@ const Modal = ({ modalContent }) => {
           </div>
           <div className="my-5">
             <div className="d-flex ms-5">
-              <div><span className="h2 fw-bold text-decoration-underline">{modalContent.city},</span>  <span className="h5">{modalContent.country}</span> </div>
+              <div>
+                <span className="h2 fw-bold text-decoration-underline">
+                  {modalContent.city},
+                </span>{" "}
+                <span className="h5">{modalContent.country}</span>{" "}
+              </div>
               {/* <div className=' fw-bold ms-2 align'>{modalContent.country}</div> */}
             </div>
             <div className="d-flex mt-3">
@@ -102,18 +110,6 @@ const Modal = ({ modalContent }) => {
                   {modalContent.humidity} %
                 </div>
               </div>
-            </div>
-            <div className="col-md-6 mt-3 ms-3">
-              {/* <h5 className='fw-bold'>{modalContent}</h5>
-                <p className='fw-bold text-muted'>{modalContent}</p> */}
-              <div className="mt-4 mb-1">
-                {/* <span className='card-text fw-bold'>&#8377;{modalContent}</span> */}
-                {/* <s className='card-text ms-3 text-muted'>${modalContent.maxRetailPrice}</s> */}
-              </div>
-              {/* <p><b>Discount : </b>{modalContent}%</p>
-                <p className='text-muted'><b>Quantity : </b>{modalContent}</p>
-                <p><b>Added : </b>{modalContent}</p>
-                <p><b>Product Location : </b>{modalContent}</p> */}
             </div>
           </div>
         </div>
