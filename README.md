@@ -1,3 +1,8 @@
+
+# start script : 'npm start'.
+
+## Data is AI generated, so there is no backend script.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
