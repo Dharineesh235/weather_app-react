@@ -117,11 +117,12 @@ export const MainComponent = () => {
   };
 
   useEffect(() => {
+    console.log(weatherDataAll.length/10);
     let roughData = weatherDataAll;
     let pageData =
       pageNo == 1
         ? roughData.slice(pageNo - 1, pageNo + 9)
-        : roughData.slice(pageNo * 10, pageNo * 10 + 10);
+        : roughData.slice(( pageNo - 1 ) * 10, (pageNo - 1) * 10 + 10);
     setWeatherData([...pageData]);
   }, [pageNo, weatherDataAll]);
 
@@ -209,8 +210,8 @@ export const MainComponent = () => {
         </thead>
         <tbody>
           {weatherData &&
-            weatherData.map((data) => (
-              <tr>
+            weatherData.map((data, index) => (
+              <tr key={index + 100}>
                 <td>{data.id}</td>
                 <td
                   onClick={() => setModalContent(data)}
@@ -230,7 +231,7 @@ export const MainComponent = () => {
       <div className="page-nav-btns" style={{ gap: "30px" }}>
         <button
           onClick={() => {
-            pageNo > 1 ? setPageNo((pageNo) => (pageNo -= 1)) : setPageNo(9);
+            pageNo > 1 ? setPageNo((pageNo) => (pageNo -= 1)) : setPageNo(Number(weatherDataAll.length/10));
           }}
         >
           <ArrowLeftCircleFill size={50} />
@@ -238,7 +239,7 @@ export const MainComponent = () => {
         <b className="p-4 fs-3">{pageNo}</b>
         <button
           onClick={() => {
-            pageNo < 9 ? setPageNo((pageNo) => (pageNo += 1)) : setPageNo(1);
+            pageNo < Number(weatherDataAll.length/10) ? setPageNo((pageNo) => (pageNo += 1)) : setPageNo(1);
           }}
         >
           <ArrowRightCircleFill size={50} />
